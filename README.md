@@ -8,3 +8,5 @@ The Research Civil Aircraft Model (RCAM) stands as a benchmark for exploring and
 
 ### Nonlinear State Equation
 In this equation, $\dot{\bar{x}} \in \mathcal{R}^9$ denotes the time derivative of the state vector $\bar{x} \in \mathcal{R}^9$, which encompasses the aircraft's pertinent dynamic states. The function $f$ represents mapping the current states $\bar{x}$ and control inputs $\bar{u}\in \mathcal{R}^5$ to the rate of change of states.
+
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\dot{\bar{x}}=f(\bar{x},\bar{u})" title="\Large \dot{\bar{x}}=f(\bar{x},\bar{u})" />
