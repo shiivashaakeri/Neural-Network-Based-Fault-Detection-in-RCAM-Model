@@ -17,52 +17,52 @@ where $\Bar{x}$ is the state vector, representing variables like the aircraft's 
 ### Fault Definitions, Assumptions, and Mathematical Modeling
 
 1. **Aileron Actuator Failure** [Yuan 2015](https://doi.org/10.1007/s00521-014-1743-4): This fault condition simulates scenarios where the aileron becomes stuck, has a limited range of motion, or becomes completely unresponsive.
-   - *Assumption*: stuck, \(d_A=15^{\circ}\)
+   - *Assumption*: stuck, $d_A=15^{\circ}$
 
 2. **Airspeed Sensor Failure**: Incorrect airspeed readings are simulated through this fault, ranging from complete sensor failure to partial blockage. The resultant airspeed is either set to zero or reduced by a constant value.
-   - *Assumption*: complete, \(V_a=0\: m/s\)
+   - *Assumption*: complete, $V_a=0\: m/s$
 
 3. **Angle of Attack Sensor Failure** [Ossmann 2016](https://doi.org/10.1016/j.proeng.2016.07.372): By fixing the angle of attack to a constant erroneous value, this fault impacts the lift and drag force calculations.
-   - *Assumption*: \(\alpha=5^{\circ}\)
+   - *Assumption*: $\alpha=5^{\circ}$
 
 4. **Control Surface Damage** [IEEE 2018](https://doi.org/10.1109/ACCESS.2018.2873504): Reflects damage to ailerons, elevators, or rudders by reducing their effectiveness. The control input effectiveness is scaled down by the damage severity.
-   - *Assumption*: aileron, \(d'_A = 0.5 d_A\)
+   - *Assumption*: aileron, $d'_A = 0.5 d_A$
 
 5. **Electrical Power Failure** [IEEE 1993](https://doi.org/10.1109/59.260874): Simulates total or partial loss of electrical power, impacting all electrically actuated control surfaces and systems. In a total failure, all control inputs are neutralized, while partial failure scales down control inputs.
-   - *Assumption*: partial, \(\bar{u} = 0.5\bar{u}\)
+   - *Assumption*: partial, $\bar{u} = 0.5\bar{u}$
 
 6. **Elevator Actuator Failure** [Wang 2015](https://doi.org/10.3390/s150819833): Affects pitch control by either sticking the elevator at a certain angle, limiting its range, or rendering it unresponsive.
-   - *Assumption*: limited range, \(d_T=\min(\max(d_T,-10),10)\)
+   - *Assumption*: limited range, $d_T=\min(\max(d_T,-10),10)$
 
 7. **Engine Failure** [IEEE 2009](https://doi.org/10.1109/AERO.2009.4839637): Simulates complete or partial thrust loss in one or both engines, crucial for maintaining flight level and speed. It directly modifies throttle inputs.
-   - *Assumption*: partial, engine 1, \(\delta_{th_1}'= 0.5\delta_{th_1}\)
+   - *Assumption*: partial, engine 1, $\delta_{th_1}'= 0.5\delta_{th_1}$
 
 8. **Fuel System Malfunction** [Wang 2015](https://doi.org/10.3390/s150819833): Alters engine performance by simulating issues in fuel delivery, affecting the throttle inputs and thereby the generated thrust.
-   - *Assumption*: both engines, \(\delta_{th}'= 0.8\delta_{th}\)
+   - *Assumption*: both engines, $\delta_{th}'= 0.8\delta_{th}$
 
 9. **Fuselage Integrity Compromise** [IEEE 2016](https://doi.org/10.1109/AERO.2016.7500674): Increases the drag coefficient to simulate structural damage.
-   - *Assumption*: \(CD' = 1.3 CD\)
+   - *Assumption*: $CD' = 1.3 CD$
 
 10. **Gyroscope Sensor Failure** [Napolitano 2000](https://doi.org/10.2514/2.5511): Sets angular rate readings to zero, affecting the aircraft's attitude control and stabilization systems.
-    - *Assumption*: \(p=q=r=0\).
+    - *Assumption*: $p=q=r=0$.
 
 11. **Landing Gear Malfunction** [Kruger 1997](https://doi.org/10.2514/2.5171): Increases drag when the landing gear is incorrectly reported as deployed.
-    - *Assumption*: deployed, \(CD' =CD+0.05\)
+    - *Assumption*: deployed, $CD' =CD+0.05$
 
 12. **Propulsion Sensor Failure**: Impacts engine performance perception by adjusting throttle settings based on incorrect sensor readings.
-    - *Assumption*: fuel pressure, both throttles, \(\delta_{th}'= 0.9\delta_{th}\)
+    - *Assumption*: fuel pressure, both throttles, $\delta_{th}'= 0.9\delta_{th}$
 
-13. **Rudder Actuator Failure**: Similar to the aileron and elevator actuator failures, it modifies the rudder control input(\(d_R\)), affecting the yaw control.
-    - *Assumption*: stuck, \(d_R=-5^{\circ}\)
+13. **Rudder Actuator Failure**: Similar to the aileron and elevator actuator failures, it modifies the rudder control input $(d_R)$, affecting the yaw control.
+    - *Assumption*: stuck, $d_R=-5^{\circ}$
 
 14. **Sideslip Angle Sensor Failure**: Incorrectly reports the sideslip angle as zero.
-    - *Assumption*: \(\beta ' = 0^{\circ}\)
+    - *Assumption*: $\beta ' = 0^{\circ}$
 
 15. **Tailplane Damage**: Reduces the effectiveness of the elevator.
-    - *Assumption*: \(d'_T= 0.5d_T\)
+    - *Assumption*: $d'_T= 0.5d_T$
 
 16. **Temperature Sensor Failures**: Incorrectly reports ambient temperature, leading to inaccurate air density calculations.
-    - *Assumption*: \(\rho '=0.5\) atm
+    - *Assumption*: $\rho '=0.5$ atm
 
 17. **Throttle Actuator Failure**: Affects engine throttle control for one or both engines by simulating stuck conditions, limited operational ranges, or complete unresponsiveness.
     - *Assumption*: stuck, engine 1, \(\delta_{th_1}'= 0.5\)
