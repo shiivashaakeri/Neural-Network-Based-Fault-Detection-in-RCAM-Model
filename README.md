@@ -65,7 +65,18 @@ where $\Bar{x}$ is the state vector, representing variables like the aircraft's 
     - *Assumption*: $\rho '=0.5$ atm
 
 17. **Throttle Actuator Failure**: Affects engine throttle control for one or both engines by simulating stuck conditions, limited operational ranges, or complete unresponsiveness.
-    - *Assumption*: stuck, engine 1, \(\delta_{th_1}'= 0.5\)
+    - *Assumption*: stuck, engine 1, $\delta_{th_1}'= 0.5$
 
 18. **Wing Damage**: Modifies lift and drag coefficients to simulate structural damage to the wings.
-    - *Assumption*: \(CD' = 0.8 CD\), \(CL' = 1.2 CL\)
+    - *Assumption*: $CD' = 0.8 CD$, $CL' = 1.2 CL$
+
+## Data Generation, Preprocessing, and Neural Network Training
+### Data Generation Process
+Initial conditions and control inputs for the simulation were obtained from trim points associated with steady-state level flight. By applying them into all of the functions, we generated the data we need.
+### Preprocessing Techniques
+Key preprocessing tasks included normalization of the feature set to a common scale and stratification of the dataset into training and testing partitions. 
+
+
+### Neural Network Training
+The neural network was trained over several epochs, with the data split into training, validation, and testing sets. The division of data was as follows: $70 \%$ for training, $15\%$ for validation, and $15\%$ for testing. The performance function used was cross-entropy, which is suitable for multi-class classification problems.
+
